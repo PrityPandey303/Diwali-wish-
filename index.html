@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diwali Wisher App</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f2dc;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #e69900;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #e69900;
+  border-radius: 5px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #e69900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc8400;
+}
+
+#wishOutput {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333333;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Diwali Wishes Generator</h1>
+    <img src="diwalibg.png" alt="Diwali Banner" class="banner-image">
+    <input type="text" id="nameInput" placeholder="Enter your friend's name">
+    <button onclick="generateWish()">Generate Wish</button>
+    <p id="wishOutput"></p>
+  </div>
+  <script>
+  function generateWish() {
+  const name = document.getElementById("nameInput").value.trim();
+  const wishes = [
+    `Happy Diwali, ${name}! May your life be filled with joy, light, and prosperity.`,
+    `${name}, wishing you a sparkling Diwali filled with joy and happiness!`,
+    `May this Diwali bring you success and joy, ${name}! Have a fantastic celebration!`,
+    `Happy Diwali, ${name}! May your future be as bright as the Diwali lights!`,
+    `${name}, may the warmth and brightness of Diwali fill your life with cheer!`
+  ];
+
+  if (name === "") {
+    alert("Please enter a name to generate a wish!");
+  } else {
+    const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+    document.getElementById("wishOutput").innerText = randomWish;
+  }
+}
+
+  </script>
+</body>
+</htm>
